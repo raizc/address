@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Address Display</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-top: 0;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .btn-submit {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+    }
+    #display-address {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Address Display</h1>
+    <div class="form-group">
+      <label for="street">Street:</label>
+      <input type="text" id="street" placeholder="Enter your street">
+    </div>
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input type="text" id="city" placeholder="Enter your city">
+    </div>
+    <div class="form-group">
+      <label for="state">Province:</label>
+      <input type="text" id="state" placeholder="Enter your province">
+    </div>
+    <div class="form-group">
+      <label for="zip">ZIP Code:</label>
+      <input type="text" id="zip" placeholder="Enter your ZIP code">
+    </div>
+    <button class="btn-submit" onclick="displayAddress()">Submit</button>
+    <div id="display-address"></div>
+  </div>
+  <script>
+    function displayAddress() {
+      var street = document.getElementById('street').value;
+      var city = document.getElementById('city').value;
+      var province = document.getElementById('province').value;
+      var zip = document.getElementById('zip').value;
+
+      var address = street + ', ' + city + ', ' + province + ', ' + zip;
+      document.getElementById('display-address').textContent = address;
+    }
+  </script>
+</body>
+</html>
